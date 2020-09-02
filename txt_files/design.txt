@@ -1,0 +1,11 @@
+DONE 1. Pick a random string from a file
+
+DONE 2. Print the random string
+
+//Add a time limit for the user to input,<unfinished> failing to complete in the time limit ends the game
+<unfinished> //Maybe add a random time limit? Each input must at least have 2 seconds to input, maybe more...
+DONE 3. Ask the user for input... Input must match string to continue
+
+4. If the string matches choose another random string
+
+5. Print the next string
