@@ -1,25 +1,10 @@
+//Pretty much my "Does this thing work? file..."
 
-// C++ program to illustrate the utility  
-// function duration::count 
-#include <iostream>  
-#include <chrono>     
-  
-int main () 
-{ 
-    using namespace std::chrono; 
-    // std::chrono::milliseconds is an  
-    // instantiation of std::chrono::duration:- 1 second 
-    milliseconds mil(1000);  
-      
-    mil = mil*60; 
-      
-    std::cout << "duration (in periods): "; 
-    std::cout << mil.count() << " milliseconds.\n"; 
-      
-    std::cout << "duration (in seconds): "; 
-    std::cout << (mil.count() * milliseconds::period::num /  
-                               milliseconds::period::den); 
-    std::cout << " seconds.\n"; 
-  
-    return 0; 
-} 
+//time specific library <chrono> handles our timer
+// std::chrono::time_point<std::chrono::system_clock> start, end;
+// start = std::chrono::system_clock::now();
+//function() or input here
+// std::chrono::duration<double> elapsed_seconds = end - start;
+// std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+// std::cout << "finished computation at " << std::ctime(&end_time)
+//           << "elapsed time: " << elapsed_seconds.count() << "s\n";
