@@ -10,16 +10,18 @@ using namespace std;
 
 int main()
 {
-    //timing input clock
+    //initialize clock from chronos to use timer
     using Clock = std::chrono::high_resolution_clock;
-
+    //our first random num for number of names that the user will input
     int randomNum;
+
+    //generates random number as time allotted for user input
     double randomNumTimer;
-    const int max = 5000;
-    const int min = 2500;
+    const int max = 3000;
+    const int min = 1500;
     srand(time(NULL));
     randomNum = rand() % 30 + 1;
-    randomNumTimer = rand()%(max-min + 1) + min;
+    randomNumTimer = rand() % (max - min + 1) + min;
     string firstName;
     string nameInput;
     string temp;
@@ -54,12 +56,22 @@ int main()
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
         std::cout << "Your input took " << ms << " milliseconds" << std::endl;
 
-        if(ms > randomNumTimer)
+        if (ms > randomNumTimer)
         {
-            cout << "You lose" << " " << "the time limit was: " << " " << randomNumTimer << "ms" << endl;
+            cout << "You lose"
+                 << " "
+                 << "the time limit was: "
+                 << " " << randomNumTimer << "ms" << endl;
+            cout << "You got: " << correct << " "
+                 << "correct!"
+                 << " "
+                 << "and"
+                 << " " << wrong << " "
+                 << "wrong!"
+                 << " " << endl;
             return 0;
         }
-
+        //for compare function 0 means "match"
         if (nameInput.compare(temp) == 0)
         {
             cout << "CORRECT"
